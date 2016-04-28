@@ -1,7 +1,5 @@
 package tutorial.model;
 
-public class VoidTask implements Runnable {
-  public void run() {
+public interface VoidTask extends Runnable {
 
-  }
 }
