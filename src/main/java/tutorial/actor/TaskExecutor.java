@@ -8,10 +8,8 @@ import tutorial.model.VoidTask;
 
 import java.util.concurrent.Callable;
 
-public class TaskExecutorActor extends UntypedActor {
+public class TaskExecutor extends UntypedActor {
   private LoggingAdapter log = Logging.getLogger(getContext().system(), this);
-
-  //TODO: create map of routees <Company, ActorPath> OR just span actor likes this in the client code
 
   public void onReceive(Object message) throws Exception {
     if (message instanceof VoidTask) {

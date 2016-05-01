@@ -5,7 +5,7 @@ import akka.pattern.ask
 import akka.testkit.{ImplicitSender, TestKit}
 import akka.util.Timeout
 import org.scalatest.{BeforeAndAfterAll, FlatSpecLike, Matchers}
-import tutorial.model.{Task, TaskWithResult, VoidTask}
+import tutorial.model.{TaskWithResult, VoidTask}
 
 import scala.collection.mutable.ArrayBuffer
 import scala.collection.parallel.immutable.ParRange
@@ -17,7 +17,7 @@ import scala.util.Random
 class ITTaskExecutorActor extends TestKit(ActorSystem("AkkaJava")) with FlatSpecLike with ImplicitSender
   with BeforeAndAfterAll with Matchers {
 
-  def executor = system.actorOf(Props(classOf[TaskExecutorActor]), "taskExecutorActor" + Random.nextInt)
+  def executor = system.actorOf(Props(classOf[TaskExecutor]), "taskExecutorActor" + Random.nextInt)
 
   override def afterAll = TestKit.shutdownActorSystem(system)
 
